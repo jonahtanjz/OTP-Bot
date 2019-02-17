@@ -20,7 +20,7 @@ class db
 	public static function query($statement, $names = array())
 	{
 		$query = self::dbc()->prepare($statement);
-		$query = execute($names);
+		$query->execute($names);
 		
 		if (explode(' ',$statement)[0] == 'SELECT')
 		{
